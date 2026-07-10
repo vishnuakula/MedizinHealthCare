@@ -1,12 +1,12 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { footerData } from '@/data/footer';
 import { company } from '@/data/company';
 
-const contactIcons = { email: Mail, phone: Phone, address: MapPin };
+const contactIcons = { email: Mail, address: MapPin };
 
 const Footer = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });

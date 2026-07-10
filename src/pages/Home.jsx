@@ -46,7 +46,7 @@ const Home = () => {
                         name: company.fullName,
                         url: company.seo.url,
                         description: company.seo.description,
-                        contactPoint: { '@type': 'ContactPoint', telephone: company.contact.phone, email: company.contact.email },
+                        contactPoint: { '@type': 'ContactPoint', email: company.contact.email },
                     })}
                 </script>
             </Helmet>

@@ -26,7 +26,6 @@ export const footerData = {
         title: 'Contact Us',
         items: [
             { type: 'email', value: 'info@medizin.com' },
-            { type: 'phone', value: '+91 73311 28003' },
             { type: 'address', value: 'MEDIZIN HEALTHCARE\nIndustrial Complex, Andheri East,\nMumbai - 400093, Maharashtra, India' },
         ],
     },

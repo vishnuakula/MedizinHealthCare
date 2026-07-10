@@ -12,7 +12,6 @@ export const company = {
         'To deliver safe, effective, and affordable gynecology and pediatric medicines through continuous innovation and strong partnerships that empower better lives for mothers and children.',
     contact: {
         email: 'info@medizin.com',
-        phone: '+91 73311 28003',
         address: 'MEDIZIN HEALTHCARE\nIndustrial Complex, Andheri East,\nMumbai - 400093, Maharashtra, India',
         city: 'Mumbai',
         state: 'Maharashtra',

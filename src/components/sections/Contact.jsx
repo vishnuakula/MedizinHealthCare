@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
-import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, CheckCircle, AlertCircle } from 'lucide-react';
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
 import Button from '@/components/common/Button';
@@ -30,7 +30,6 @@ const Contact = () => {
 
     const info = [
         { icon: Mail, label: 'EMAIL', value: company.contact.email, href: `mailto:${company.contact.email}` },
-        { icon: Phone, label: 'PHONE', value: company.contact.phone, href: `tel:${company.contact.phone.replace(/\s/g, '')}` },
         { icon: MapPin, label: 'ADDRESS', value: company.contact.address },
     ];
 
@@ -100,10 +99,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div>
-                                    <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Phone Number</label>
-                                    <input type="tel" {...register('phone')} placeholder="+91 73311 28003" className={inputCls} style={{ border: '1.5px solid #E2E8F0' }} />
-                                </div>
+
 
                                 <div>
                                     <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Subject *</label>
