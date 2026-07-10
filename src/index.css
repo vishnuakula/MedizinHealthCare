@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #0A4CB5;
+    --color-primary-dark: #083A8C;
+    --color-primary-light: #E8F0FE;
+    --color-accent: #18B66B;
+    --color-accent-dark: #0A6B3A;
+    --color-accent-light: #E6F9F0;
+    --color-navy: #0D1B2A;
+    --color-heading: #0F172A;
+    --color-body: #475569;
+    --color-surface: #F8FAFC;
+    --color-line: #E2E8F0;
+}
+
+/* ===== Base ===== */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #0F172A;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+::selection {
+    background-color: #0A4CB5;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94A3B8;
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748B;
+}
+
+/* ===== Utilities ===== */
+.gradient-text {
+    background: linear-gradient(135deg, #0A4CB5, #18B66B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+}

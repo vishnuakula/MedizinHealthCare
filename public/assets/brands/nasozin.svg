@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <rect width="100%" height="100%" rx="16" fill="white"/>
+  <!-- Rx symbol -->
+  <text x="40" y="55" font-family="serif" font-size="18" fill="#dc2626" font-style="italic">Rx</text>
+  <!-- NASOZIN text -->
+  <text x="170" y="155" font-family="Arial Black, Arial, sans-serif" font-size="56" font-weight="900" text-anchor="middle" fill="#db2777">NASOZIN</text>
+  <!-- DROPS text -->
+  <line x1="60" y1="180" x2="110" y2="180" stroke="#db2777" stroke-width="2"/>
+  <text x="170" y="195" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" letter-spacing="6" fill="#1e3a5f">DROPS</text>
+  <line x1="225" y1="180" x2="275" y2="180" stroke="#db2777" stroke-width="2"/>
+  <!-- Face profile line art -->
+  <path d="M310,60 Q330,80 325,110 Q320,130 330,150 Q335,160 330,180 Q325,195 335,210" fill="none" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M335,210 Q340,215 345,210" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round"/>
+  <path d="M345,210 Q350,195 345,180 Q340,165 350,145 Q355,135 348,120 Q342,105 350,85 Q355,70 345,55" fill="none" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Spray dots -->
+  <circle cx="300" cy="145" r="2" fill="#1e40af"/>
+  <circle cx="293" cy="150" r="1.5" fill="#1e40af"/>
+  <circle cx="288" cy="155" r="2" fill="#1e40af"/>
+  <circle cx="295" cy="160" r="1.5" fill="#1e40af"/>
+  <circle cx="285" cy="145" r="1.5" fill="#1e40af"/>
+  <circle cx="290" cy="140" r="2" fill="#1e40af"/>
+  <circle cx="280" cy="150" r="1.5" fill="#1e40af"/>
+  <circle cx="298" cy="138" r="1.5" fill="#1e40af"/>
+  <circle cx="283" cy="160" r="1.5" fill="#1e40af"/>
+  <circle cx="278" cy="155" r="1" fill="#1e40af"/>
+  <circle cx="290" cy="165" r="1" fill="#1e40af"/>
+</svg>

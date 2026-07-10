@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "default-1",
+        "title": "Trusted Partner in",
+        "subtitle": "Gynecology and Pediatric Medicines",
+        "description": "Delivering trusted pharmaceutical marketing and distribution solutions with a commitment to quality, innovation, and better healthcare for women and children.",
+        "primaryButtonText": "Read More",
+        "primaryButtonLink": "#about",
+        "secondaryButtonText": "Contact Us",
+        "secondaryButtonLink": "#contact",
+        "image": "/uploads/hero/default-scientific.webp",
+        "badge": "About MEDIZIN",
+        "order": 1,
+        "isActive": true,
+        "createdAt": "2026-07-10T19:35:09.787Z",
+        "updatedAt": "2026-07-10T19:35:09.787Z"
+    },
+    {
+        "_id": "default-2",
+        "title": "Pioneering Research and",
+        "subtitle": "Quality Pharmaceutical Solutions",
+        "description": "We collaborate with healthcare professionals to formulate, package, and distribute next-generation medical therapeutics globally.",
+        "primaryButtonText": "Our Brands",
+        "primaryButtonLink": "#brands",
+        "secondaryButtonText": "Learn More",
+        "secondaryButtonLink": "#about",
+        "image": "/uploads/hero/default-researcher.webp",
+        "badge": "Research & Innovation",
+        "order": 2,
+        "isActive": true,
+        "createdAt": "2026-07-10T19:35:09.787Z",
+        "updatedAt": "2026-07-10T19:35:09.787Z"
+    },
+    {
+        "_id": "default-3",
+        "title": "State-of-the-Art Logistics",
+        "subtitle": "Safe Medication Distribution",
+        "description": "Equipped with temperature-controlled distribution workflows ensuring timely shipment and secure delivery of our pediatric and maternity treatments.",
+        "primaryButtonText": "Our Process",
+        "primaryButtonLink": "#workflow",
+        "secondaryButtonText": "Ask a Query",
+        "secondaryButtonLink": "#contact",
+        "image": "/uploads/hero/default-logistics.webp",
+        "badge": "Global Supply Chain",
+        "order": 3,
+        "isActive": true,
+        "createdAt": "2026-07-10T19:35:09.787Z",
+        "updatedAt": "2026-07-10T19:35:09.787Z"
+    }
+]

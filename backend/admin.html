@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Image Multer Upload Portal</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            padding: 40px;
+            color: #334155;
+        }
+
+        .container {
+            max-width: 36rem;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            color: #0f172a;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .file-upload {
+            border: 2px dashed #cbd5e1;
+            padding: 32px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .file-upload:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        button:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        #status {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admin Brand Uploader</h1>
+        <p>This securely uploads files to your project via the Multer backend.</p>
+
+        <form id="uploadForm">
+            <div class="file-upload" id="dropzone" onclick="document.getElementById('fileInput').click()">
+                <p><strong>Click to browse</strong> or drag an image here.</p>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="updateFileName()">
+                <div id="fileNameDisplay" style="color: #2563eb; font-weight: bold; margin-top: 8px;"></div>
+            </div>
+
+            <p style="font-size: 14px; margin-bottom: 8px; color: #475569;">Specify save name correctly (e.g.
+                <b>dryfit.png</b>, <b>nasozin.png</b>)
+            </p>
+            <input type="text" id="customFileName" placeholder="Filename (e.g. dryfit.png)" required>
+
+            <button type="submit" id="submitBtn">Upload via Multer</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <script>
+        let selectedFile = null;
+
+        function updateFileName() {
+            const input = document.getElementById('fileInput');
+            if (input.files && input.files.length > 0) {
+                selectedFile = input.files[0];
+                document.getElementById('fileNameDisplay').textContent = `Selected: ${selectedFile.name}`;
+                document.getElementById('customFileName').value = selectedFile.name.toLowerCase();
+            }
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const statusDiv = document.getElementById('status');
+            const submitBtn = document.getElementById('submitBtn');
+            const customName = document.getElementById('customFileName').value;
+
+            if (!selectedFile) {
+                alert('Please select a file first.');
+                return;
+            }
+
+            // Prepare form data
+            const formData = new FormData();
+
+            // Reconstruct file with custom name
+            const renamedFile = new File([selectedFile], customName, { type: selectedFile.type });
+            formData.append('image', renamedFile);
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Uploading...';
+            statusDiv.style.display = 'none';
+
+            try {
+                const response = await fetch('http://localhost:3001/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    statusDiv.textContent = 'Successfully Saved with Multer!';
+                    statusDiv.className = 'success';
+
+                    // Reset
+                    document.getElementById('uploadForm').reset();
+                    selectedFile = null;
+                    document.getElementById('fileNameDisplay').textContent = '';
+                } else {
+                    throw new Error(data.error || 'Server error');
+                }
+            } catch (err) {
+                statusDiv.textContent = `Upload failed: ${err.message}. Is the backend running?`;
+                statusDiv.className = 'error';
+            } finally {
+                statusDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Upload via Multer';
+            }
+        });
+    </script>
+</body>
+
+</html>
