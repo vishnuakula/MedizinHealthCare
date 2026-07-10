@@ -26,6 +26,8 @@ const Home = () => {
                     offset: -80
                 });
             }, 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
     }, [location]);
 
