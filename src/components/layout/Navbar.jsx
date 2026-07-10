@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import Container from '@/components/common/Container';
@@ -8,6 +9,7 @@ import { navigationLinks } from '@/data/navigation';
 import { company } from '@/data/company';
 
 const Navbar = () => {
+    const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [active, setActive] = useState('hero');
@@ -42,40 +44,63 @@ const Navbar = () => {
                 <Container>
                     <div className="flex items-center justify-between" style={{ height: 72 }}>
                         {/* Logo */}
-                        <ScrollLink to="hero" smooth duration={800} offset={-80} className="flex items-center cursor-pointer select-none">
-                            <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-12 w-auto object-contain" />
-                        </ScrollLink>
+                        {location.pathname === '/' ? (
+                            <ScrollLink to="hero" smooth duration={800} offset={-80} className="flex items-center cursor-pointer select-none">
+                                <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-12 w-auto object-contain" />
+                            </ScrollLink>
+                        ) : (
+                            <RouterLink to="/#hero" className="flex items-center cursor-pointer select-none">
+                                <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-12 w-auto object-contain" />
+                            </RouterLink>
+                        )}
 
                         {/* Desktop Nav */}
                         <nav className="hidden lg:flex items-center gap-1">
-                            {navigationLinks.map((link) => (
-                                <ScrollLink
-                                    key={link.id}
-                                    to={link.href}
-                                    spy
-                                    smooth
-                                    duration={800}
-                                    offset={-80}
-                                    onSetActive={() => setActive(link.id)}
-                                    className="relative px-4 py-2 text-sm font-medium rounded-lg cursor-pointer transition-colors duration-200"
-                                    style={{ color: active === link.id ? '#0A4CB5' : '#475569' }}
-                                >
-                                    {link.label}
-                                    {active === link.id && (
-                                        <span
-                                            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-[3px] rounded-full"
-                                            style={{ backgroundColor: '#0A4CB5' }}
-                                        />
-                                    )}
-                                </ScrollLink>
-                            ))}
+                            {navigationLinks.map((link) =>
+                                location.pathname === '/' ? (
+                                    <ScrollLink
+                                        key={link.id}
+                                        to={link.href}
+                                        spy
+                                        smooth
+                                        duration={800}
+                                        offset={-80}
+                                        onSetActive={() => setActive(link.id)}
+                                        className="relative px-4 py-2 text-sm font-medium rounded-lg cursor-pointer transition-colors duration-200"
+                                        style={{ color: active === link.id ? '#0A4CB5' : '#475569' }}
+                                    >
+                                        {link.label}
+                                        {active === link.id && (
+                                            <span
+                                                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-[3px] rounded-full"
+                                                style={{ backgroundColor: '#0A4CB5' }}
+                                            />
+                                        )}
+                                    </ScrollLink>
+                                ) : (
+                                    <RouterLink
+                                        key={link.id}
+                                        to={`/#${link.href}`}
+                                        className="relative px-4 py-2 text-sm font-medium rounded-lg cursor-pointer transition-colors duration-200"
+                                        style={{ color: '#475569' }}
+                                    >
+                                        {link.label}
+                                    </RouterLink>
+                                )
+                            )}
                         </nav>
 
                         {/* Desktop CTA */}
                         <div className="hidden lg:block">
-                            <ScrollLink to="contact" smooth duration={800} offset={-80}>
-                                <Button variant="secondary" size="sm" icon={Phone}>Contact Us</Button>
-                            </ScrollLink>
+                            {location.pathname === '/' ? (
+                                <ScrollLink to="contact" smooth duration={800} offset={-80}>
+                                    <Button variant="secondary" size="sm" icon={Phone}>Contact Us</Button>
+                                </ScrollLink>
+                            ) : (
+                                <RouterLink to="/#contact">
+                                    <Button variant="secondary" size="sm" icon={Phone}>Contact Us</Button>
+                                </RouterLink>
+                            )}
                         </div>
 
                         {/* Hamburger */}
@@ -113,29 +138,49 @@ const Navbar = () => {
                             <nav className="flex-1 p-5 space-y-1">
                                 {navigationLinks.map((link, i) => (
                                     <motion.div key={link.id} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06 }}>
-                                        <ScrollLink
-                                            to={link.href}
-                                            spy
-                                            smooth
-                                            duration={800}
-                                            offset={-80}
-                                            onSetActive={() => setActive(link.id)}
-                                            onClick={close}
-                                            className="block px-4 py-3 rounded-xl text-base font-medium cursor-pointer"
-                                            style={{
-                                                color: active === link.id ? '#0A4CB5' : '#475569',
-                                                backgroundColor: active === link.id ? '#E8F0FE' : 'transparent',
-                                            }}
-                                        >
-                                            {link.label}
-                                        </ScrollLink>
+                                        {location.pathname === '/' ? (
+                                            <ScrollLink
+                                                to={link.href}
+                                                spy
+                                                smooth
+                                                duration={800}
+                                                offset={-80}
+                                                onSetActive={() => setActive(link.id)}
+                                                onClick={close}
+                                                className="block px-4 py-3 rounded-xl text-base font-medium cursor-pointer"
+                                                style={{
+                                                    color: active === link.id ? '#0A4CB5' : '#475569',
+                                                    backgroundColor: active === link.id ? '#E8F0FE' : 'transparent',
+                                                }}
+                                            >
+                                                {link.label}
+                                            </ScrollLink>
+                                        ) : (
+                                            <RouterLink
+                                                to={`/#${link.href}`}
+                                                onClick={close}
+                                                className="block px-4 py-3 rounded-xl text-base font-medium cursor-pointer"
+                                                style={{
+                                                    color: '#475569',
+                                                    backgroundColor: 'transparent',
+                                                }}
+                                            >
+                                                {link.label}
+                                            </RouterLink>
+                                        )}
                                     </motion.div>
                                 ))}
                             </nav>
                             <div className="p-5" style={{ borderTop: '1px solid #F1F5F9' }}>
-                                <ScrollLink to="contact" smooth duration={800} offset={-80} onClick={close}>
-                                    <Button variant="secondary" size="md" icon={Phone} className="w-full justify-center">Contact Us</Button>
-                                </ScrollLink>
+                                {location.pathname === '/' ? (
+                                    <ScrollLink to="contact" smooth duration={800} offset={-80} onClick={close}>
+                                        <Button variant="secondary" size="md" icon={Phone} className="w-full justify-center">Contact Us</Button>
+                                    </ScrollLink>
+                                ) : (
+                                    <RouterLink to="/#contact" onClick={close}>
+                                        <Button variant="secondary" size="md" icon={Phone} className="w-full justify-center">Contact Us</Button>
+                                    </RouterLink>
+                                )}
                             </div>
                         </motion.div>
                     </>

@@ -8,8 +8,8 @@ import SectionTitle from '@/components/common/SectionTitle';
 import Button from '@/components/common/Button';
 import { company } from '@/data/company';
 
-// Reduced padding from px-4 py-3 to px-3 py-2, and text-sm to text-xs
-const inputCls = 'w-full px-3 py-2 rounded-lg text-xs transition-all duration-200 outline-none placeholder:text-gray-400';
+// Standard input classes with standard padding and text sizes
+const inputCls = 'w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 outline-none placeholder:text-gray-400';
 
 const Contact = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -43,26 +43,26 @@ const Contact = () => {
                     subtitle="Have a question, partnership inquiry, or want to learn more? Reach out and we'll get back to you promptly."
                 />
 
-                {/* Added max-w-4xl and gap-8/10 to make the layout significantly more compact */}
-                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 max-w-4xl mx-auto items-stretch">
-                    {/* Info Panel (Reduced margins/paddings and heading size) */}
+                {/* Balanced layout width of max-w-5xl */}
+                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-5xl mx-auto items-stretch">
+                    {/* Info Panel */}
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5 }} className="lg:col-span-2 flex flex-col justify-center">
-                        <h3 className="text-lg font-bold mb-1.5" style={{ color: '#0F172A' }}>Contact Information</h3>
-                        <p className="text-xs leading-relaxed mb-6" style={{ color: '#64748B' }}>Reach out through any of the following channels.</p>
+                        <h3 className="text-2xl font-bold mb-3" style={{ color: '#0F172A' }}>Contact Information</h3>
+                        <p className="text-sm leading-relaxed mb-8" style={{ color: '#64748B' }}>Reach out through any of the following channels.</p>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {info.map(item => (
-                                <div key={item.label} className="flex items-start gap-3">
-                                    {/* Shrunk icon box container from w-11 h-11 to w-9 h-9 */}
-                                    <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#E8F0FE' }}>
-                                        <item.icon className="w-4 h-4" style={{ color: '#0A4CB5' }} />
+                                <div key={item.label} className="flex items-start gap-4">
+                                    {/* Standard icon box container */}
+                                    <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: '#E8F0FE' }}>
+                                        <item.icon className="w-5 h-5" style={{ color: '#0A4CB5' }} />
                                     </div>
                                     <div>
-                                        <span className="text-[10px] font-bold tracking-wider block mb-0.5" style={{ color: '#0A4CB5' }}>{item.label}</span>
+                                        <span className="text-xs font-bold tracking-wider block mb-1" style={{ color: '#0A4CB5' }}>{item.label}</span>
                                         {item.href ? (
-                                            <a href={item.href} className="text-xs hover:underline font-medium" style={{ color: '#0F172A' }}>{item.value}</a>
+                                            <a href={item.href} className="text-sm hover:underline font-medium" style={{ color: '#0F172A' }}>{item.value}</a>
                                         ) : (
-                                            <span className="text-xs leading-relaxed" style={{ color: '#0F172A', whiteSpace: 'pre-line' }}>{item.value}</span>
+                                            <span className="text-sm leading-relaxed" style={{ color: '#0F172A', whiteSpace: 'pre-line' }}>{item.value}</span>
                                         )}
                                     </div>
                                 </div>
@@ -70,9 +70,9 @@ const Contact = () => {
                         </div>
                     </motion.div>
 
-                    {/* Form (Reduced padding from p-8 to p-5/6, input spacing, and button size) */}
+                    {/* Form */}
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="lg:col-span-3">
-                        <div className="rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100 bg-white">
+                        <div className="rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 bg-white">
                             {status === 'success' && (
                                 <div className="flex items-center gap-2 p-3 rounded-lg mb-4 text-xs" style={{ backgroundColor: '#ECFDF5', color: '#059669' }}>
                                     <CheckCircle className="w-4 h-4 shrink-0" />
@@ -86,40 +86,38 @@ const Contact = () => {
                                 </div>
                             )}
 
-                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3.5">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="text-[11px] font-semibold mb-1 block" style={{ color: '#0F172A' }}>Full Name *</label>
+                                        <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Full Name *</label>
                                         <input {...register('name', { required: 'Required' })} placeholder="John Doe" className={inputCls} style={{ border: `1.5px solid ${errors.name ? '#EF4444' : '#E2E8F0'}` }} />
                                         {errors.name && <p className="text-[10px] mt-0.5" style={{ color: '#EF4444' }}>{errors.name.message}</p>}
                                     </div>
                                     <div>
-                                        <label className="text-[11px] font-semibold mb-1 block" style={{ color: '#0F172A' }}>Email *</label>
+                                        <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Email *</label>
                                         <input type="email" {...register('email', { required: 'Required', pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Invalid email' } })} placeholder="john@example.com" className={inputCls} style={{ border: `1.5px solid ${errors.email ? '#EF4444' : '#E2E8F0'}` }} />
                                         {errors.email && <p className="text-[10px] mt-0.5" style={{ color: '#EF4444' }}>{errors.email.message}</p>}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="text-[11px] font-semibold mb-1 block" style={{ color: '#0F172A' }}>Phone Number</label>
+                                    <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Phone Number</label>
                                     <input type="tel" {...register('phone')} placeholder="+91 73311 28003" className={inputCls} style={{ border: '1.5px solid #E2E8F0' }} />
                                 </div>
 
                                 <div>
-                                    <label className="text-[11px] font-semibold mb-1 block" style={{ color: '#0F172A' }}>Subject *</label>
+                                    <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Subject *</label>
                                     <input {...register('subject', { required: 'Required' })} placeholder="Partnership Inquiry" className={inputCls} style={{ border: `1.5px solid ${errors.subject ? '#EF4444' : '#E2E8F0'}` }} />
                                     {errors.subject && <p className="text-[10px] mt-0.5" style={{ color: '#EF4444' }}>{errors.subject.message}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="text-[11px] font-semibold mb-1 block" style={{ color: '#0F172A' }}>Message *</label>
-                                    {/* Reduced rows from 4 to 3 */}
-                                    <textarea {...register('message', { required: 'Required' })} rows={3} placeholder="Tell us about your inquiry..." className={`${inputCls} resize-none`} style={{ border: `1.5px solid ${errors.message ? '#EF4444' : '#E2E8F0'}` }} />
+                                    <label className="text-xs font-semibold mb-1.5 block" style={{ color: '#0F172A' }}>Message *</label>
+                                    <textarea {...register('message', { required: 'Required' })} rows={4} placeholder="Tell us about your inquiry..." className={`${inputCls} resize-none`} style={{ border: `1.5px solid ${errors.message ? '#EF4444' : '#E2E8F0'}` }} />
                                     {errors.message && <p className="text-[10px] mt-0.5" style={{ color: '#EF4444' }}>{errors.message.message}</p>}
                                 </div>
 
-                                {/* Use size="md" button instead of "lg" */}
-                                <Button type="submit" variant="primary" size="md" icon={Send} loading={isSubmitting} className="w-full sm:w-auto">
+                                <Button type="submit" variant="primary" size="lg" icon={Send} loading={isSubmitting} className="w-full sm:w-auto">
                                     Send Message
                                 </Button>
                             </form>
