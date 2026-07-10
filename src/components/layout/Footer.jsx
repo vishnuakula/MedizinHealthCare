@@ -1,12 +1,11 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Globe, MessageCircle, Link2, Camera, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import Container from '@/components/common/Container';
 import { footerData } from '@/data/footer';
 import { company } from '@/data/company';
 
-const socialIcons = { facebook: Globe, twitter: MessageCircle, linkedin: Link2, instagram: Camera };
 const contactIcons = { email: Mail, phone: Phone, address: MapPin };
 
 const Footer = () => {
@@ -33,22 +32,7 @@ const Footer = () => {
                             <div className="flex items-center gap-2.5 mb-5">
                                 <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-14 w-auto object-contain bg-white rounded-xl p-1.5" />
                             </div>
-                            <p className="text-sm leading-relaxed mb-6" style={{ color: '#94A3B8' }}>{footerData.company.description}</p>
-                            <div className="flex gap-2.5">
-                                {Object.entries(company.social).map(([key, url]) => {
-                                    const Icon = socialIcons[key];
-                                    return Icon ? (
-                                        <a key={key} href={url} target="_blank" rel="noopener noreferrer" aria-label={key}
-                                            className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-200"
-                                            style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
-                                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0A4CB5'}
-                                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'}
-                                        >
-                                            <Icon className="w-4 h-4" style={{ color: '#94A3B8' }} />
-                                        </a>
-                                    ) : null;
-                                })}
-                            </div>
+                            <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>{footerData.company.description}</p>
                         </motion.div>
 
                         {/* Quick Links */}
