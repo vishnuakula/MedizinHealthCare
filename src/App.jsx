@@ -12,10 +12,10 @@ const NotFound = lazy(() => import('@/pages/NotFound'));
 const Loader = () => (
     <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center animate-pulse" style={{ background: 'linear-gradient(135deg, #0A4CB5, #18B66B)' }}>
-                <span className="text-white font-bold text-xl">M</span>
+            <div className="w-16 h-16 flex items-center justify-center animate-pulse">
+                <img src="/favicon.png" alt="Medizin Healthcare Logo" className="w-full h-full object-contain" />
             </div>
-            <p className="text-sm" style={{ color: '#64748B' }}>Loading…</p>
+            <p className="text-sm font-semibold tracking-wide" style={{ color: '#0A4CB5' }}>Loading…</p>
         </div>
     </div>
 );
