@@ -28,6 +28,6 @@ export const company = {
         description:
             'Pharmaceutical marketing and distribution company specializing in gynecology and pediatric medicines.',
         keywords: 'pharmaceutical, marketing, distribution, gynecology, pediatric, medicines, healthcare',
-        url: 'https://medizinhealthcare.in',
+        url: 'https://www.medyzinhealthcare.com',
     },
 };
