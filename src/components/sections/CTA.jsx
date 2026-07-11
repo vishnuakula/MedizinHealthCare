@@ -29,7 +29,7 @@ const CTA = () => {
                         </h2>
                         <p className="text-white/80 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                             Whether you&apos;re a healthcare provider, distributor, or pharmaceutical company,
-                            MEDIZIN is ready to build strong partnerships that create lasting value.
+                            MEDYZIN is ready to build strong partnerships that create lasting value.
                         </p>
                         <ScrollLink to="contact" smooth duration={800} offset={-80}>
                             <Button variant="white" size="lg" icon={ArrowRight} iconPosition="right">Get In Touch</Button>

@@ -26,7 +26,7 @@ const Hero = () => (
 
                     {/* Headline */}
                     <h1 className="text-[1.65rem] sm:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-4" style={{ color: '#0F172A' }}>
-                        Welcome to <span className="gradient-text uppercase font-sans tracking-tight">MEDIZIN</span> Healthcare
+                        Welcome to <span className="gradient-text uppercase font-sans tracking-tight">MEDYZIN</span> Healthcare
                     </h1>
 
                     {/* Tagline */}

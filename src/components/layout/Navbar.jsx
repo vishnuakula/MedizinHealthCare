@@ -46,11 +46,11 @@ const Navbar = () => {
                         {/* Logo */}
                         {location.pathname === '/' ? (
                             <ScrollLink to="hero" smooth duration={800} offset={-80} className="flex items-center cursor-pointer select-none">
-                                <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-12 w-auto object-contain" />
+                                <img src="/assets/logo.png" alt="Medyzin Healthcare Logo" className="h-12 w-auto object-contain" />
                             </ScrollLink>
                         ) : (
                             <RouterLink to="/#hero" className="flex items-center cursor-pointer select-none">
-                                <img src="/assets/logo.png" alt="Medizin Healthcare Logo" className="h-12 w-auto object-contain" />
+                                <img src="/assets/logo.png" alt="Medyzin Healthcare Logo" className="h-12 w-auto object-contain" />
                             </RouterLink>
                         )}
 

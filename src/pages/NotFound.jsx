@@ -8,7 +8,7 @@ import Button from '@/components/common/Button';
 const NotFound = () => (
     <>
         <Helmet>
-            <title>404 – Page Not Found | MEDIZIN</title>
+            <title>404 – Page Not Found | MEDYZIN</title>
         </Helmet>
         <section className="min-h-screen flex items-center justify-center" style={{ paddingTop: 100 }}>
             <Container>

@@ -37,7 +37,7 @@ const WhyChoose = () => (
     <section id="why-choose" className="section-padding" style={{ backgroundColor: '#F8FAFC' }}>
         <Container>
             <SectionTitle
-                badge="Why MEDIZIN"
+                badge="Why MEDYZIN"
                 title="Commitment You Can Count On"
                 subtitle="We combine pharmaceutical expertise with unwavering commitment to quality, trust, and innovation."
             />

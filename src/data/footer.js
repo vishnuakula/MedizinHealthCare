@@ -25,8 +25,8 @@ export const footerData = {
     contact: {
         title: 'Contact Us',
         items: [
-            { type: 'email', value: 'info@medizin.com' },
-            { type: 'address', value: 'MEDIZIN HEALTHCARE\nIndustrial Complex, Andheri East,\nMumbai - 400093, Maharashtra, India' },
+            { type: 'email', value: 'info@medyzin.com' },
+            { type: 'address', value: 'MEDYZIN HEALTHCARE\nIndustrial Complex, Andheri East,\nMumbai - 400093, Maharashtra, India' },
         ],
     },
     legal: [

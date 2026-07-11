@@ -13,7 +13,7 @@ export const workflowSteps = [
     {
         id: 2,
         step: '02',
-        title: 'MEDIZIN',
+        title: 'MEDYZIN',
         description: 'We bridge the gap between manufacturers and healthcare providers with strategic marketing & distribution.',
         icon: Building2,
         bg: '#ECFDF5',

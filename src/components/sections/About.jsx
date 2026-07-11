@@ -16,7 +16,7 @@ const About = () => {
                     {/* Left */}
                     <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5 }}>
                         <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-5" style={{ backgroundColor: '#E8F0FE', color: '#0A4CB5' }}>
-                            About MEDIZIN
+                            About MEDYZIN
                         </span>
 
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6" style={{ color: '#0F172A' }}>
