@@ -72,11 +72,7 @@ const FocusCard = ({ area, index }) => {
                             className="text-xs font-bold flex items-center gap-1 transition-colors hover:opacity-85"
                             style={{ color: area.color }}
                         >
-                            {expanded ? (
-                                <>Read Less <ChevronUp className="w-3 h-3" /></>
-                            ) : (
-                                <>Read More <ArrowUpRight className="w-3 h-3" /></>
-                            )}
+                            {expanded ? 'Read Less' : 'Read More'}
                         </button>
                     </div>
                 </div>
