@@ -38,7 +38,7 @@ const BrandGallery = ({ images }) => {
                         className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-sm group bg-slate-100 border border-slate-200"
                         onClick={() => openLightbox(idx)}
                     >
-                        <img src={img} alt={`Gallery image ${idx + 1}`} className="w-full h-full object-contain p-4 transition-transform duration-300" loading="lazy" onError={(e) => { e.target.onerror = null; e.target.src = img.replace('.png', '.svg'); }} />
+                        <img src={img} alt={`Gallery image ${idx + 1}`} className="w-full h-full object-contain p-4 transition-transform duration-300" loading="lazy" onError={(e) => { e.target.onerror = null; e.target.src = img.replace('.webp', '.svg'); }} />
                         <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors flex items-center justify-center">
                             <ZoomIn className="text-white opacity-0 group-hover:opacity-100 w-8 h-8 drop-shadow-md" />
                         </div>
@@ -76,7 +76,7 @@ const BrandGallery = ({ images }) => {
                                 alt={`Lightbox image ${currentIndex + 1}`}
                                 className="max-w-full max-h-[85vh] object-contain rounded-xl"
                                 onClick={(e) => e.stopPropagation()}
-                                onError={(e) => { e.target.onerror = null; e.target.src = images[currentIndex].replace('.png', '.svg'); }}
+                                onError={(e) => { e.target.onerror = null; e.target.src = images[currentIndex].replace('.webp', '.svg'); }}
                             />
 
                             {images.length > 1 && (

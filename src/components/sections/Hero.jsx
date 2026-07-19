@@ -52,14 +52,14 @@ const Hero = () => (
         {/* CSS styles to implement the mockup background images and text-overlay masking */}
         <style>{`
             .hero-bg-responsive {
-                background-image: linear-gradient(to bottom, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.85) 100%), url('/assets/hero-cover.png');
+                background-image: linear-gradient(to bottom, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.85) 100%), url('/assets/hero-cover.webp');
                 background-size: cover;
                 background-position: 72% center;
                 background-repeat: no-repeat;
             }
             @media (min-width: 1024px) {
                 .hero-bg-responsive {
-                    background-image: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0.92) 48%, rgba(255,255,255,0) 65%), url('/assets/hero-cover.png');
+                    background-image: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0.92) 48%, rgba(255,255,255,0) 65%), url('/assets/hero-cover.webp');
                     background-position: right center;
                 }
             }

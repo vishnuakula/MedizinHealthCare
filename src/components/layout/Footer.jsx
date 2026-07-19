@@ -30,7 +30,7 @@ const Footer = () => {
                         {/* Brand */}
                         <motion.div variants={fade}>
                             <div className="flex items-center gap-2.5 mb-5">
-                                <img src="/assets/logo.png" alt="Medyzin Healthcare Logo" className="h-14 w-auto object-contain bg-white rounded-xl p-1.5" />
+                                <img src="/assets/logo.webp" alt="Medyzin Healthcare Logo" loading="lazy" width="140" height="56" className="h-14 w-auto object-contain bg-white rounded-xl p-1.5" />
                             </div>
                             <p className="text-sm leading-relaxed mb-6" style={{ color: '#94A3B8' }}>{footerData.company.description}</p>
                         </motion.div>

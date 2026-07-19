@@ -13,7 +13,7 @@ const Loader = () => (
     <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
             <div className="w-16 h-16 flex items-center justify-center animate-pulse">
-                <img src="/favicon.png" alt="Medyzin Healthcare Logo" className="w-full h-full object-contain" />
+                <img src="/favicon.svg" alt="Medyzin Healthcare Logo" width="64" height="64" className="w-full h-full object-contain" />
             </div>
             <p className="text-sm font-semibold tracking-wide" style={{ color: '#0A4CB5' }}>Loading…</p>
         </div>

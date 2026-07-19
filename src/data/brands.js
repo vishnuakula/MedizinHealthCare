@@ -30,8 +30,8 @@ export const brands = [
         storage: "Store below 30°C in a cool and dry place.",
         packSize: "10 ml / 20 ml",
         gallery: [
-            '/assets/brands/nasozin.png',
-            '/assets/brands/nasozin_product.png'
+            '/assets/brands/nasozin.webp',
+            '/assets/brands/nasozin_product.webp'
         ]
     },
     {
@@ -64,8 +64,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "60 ml / 100 ml",
         gallery: [
-            '/assets/brands/appumol_250.png',
-            '/assets/brands/appumol_250_product.png'
+            '/assets/brands/appumol_250.webp',
+            '/assets/brands/appumol_250_product.webp'
         ]
     },
     {
@@ -98,8 +98,8 @@ export const brands = [
         storage: "Store in a cool, dry place below 30°C.",
         packSize: "10×10 Tablets",
         gallery: [
-            '/assets/brands/appumol_650.png',
-            '/assets/brands/appumol_650_product.png'
+            '/assets/brands/appumol_650.webp',
+            '/assets/brands/appumol_650_product.webp'
         ]
     },
     {
@@ -132,8 +132,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "10 ml",
         gallery: [
-            '/assets/brands/nullworm_plus.png',
-            '/assets/brands/nullworm_plus_product.png'
+            '/assets/brands/nullworm_plus.webp',
+            '/assets/brands/nullworm_plus_product.webp'
         ]
     },
     {
@@ -166,8 +166,8 @@ export const brands = [
         storage: "Store in a dry place.",
         packSize: "75 gm",
         gallery: [
-            '/assets/brands/appubar.png',
-            '/assets/brands/appubar_product.png'
+            '/assets/brands/appubar.webp',
+            '/assets/brands/appubar_product.webp'
         ]
     },
     {
@@ -200,8 +200,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "100 ml",
         gallery: [
-            '/assets/brands/moizin.png',
-            '/assets/brands/moizin_product.png'
+            '/assets/brands/moizin.webp',
+            '/assets/brands/moizin_product.webp'
         ]
     },
     {
@@ -234,8 +234,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "30 ml / 100 ml",
         gallery: [
-            '/assets/brands/fine_d3.png',
-            '/assets/brands/fine_d3_product.png'
+            '/assets/brands/fine_d3.webp',
+            '/assets/brands/fine_d3_product.webp'
         ]
     },
     {
@@ -268,8 +268,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "15 ml / 200 ml",
         gallery: [
-            '/assets/brands/ayron_drops.png',
-            '/assets/brands/ayron_drops_product.png'
+            '/assets/brands/ayron_drops.webp',
+            '/assets/brands/ayron_drops_product.webp'
         ]
     },
     {
@@ -302,8 +302,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "10×10 Tablets",
         gallery: [
-            '/assets/brands/ayron_xt.png',
-            '/assets/brands/ayron_xt_product.png'
+            '/assets/brands/ayron_xt.webp',
+            '/assets/brands/ayron_xt_product.webp'
         ]
     },
     {
@@ -336,8 +336,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "200 ml",
         gallery: [
-            '/assets/brands/vitazin_m.png',
-            '/assets/brands/vitazin_m_product.png'
+            '/assets/brands/vitazin_m.webp',
+            '/assets/brands/vitazin_m_product.webp'
         ]
     },
     {
@@ -370,8 +370,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "100 ml",
         gallery: [
-            '/assets/brands/respibudy_ls.png',
-            '/assets/brands/respibudy_ls_product.png'
+            '/assets/brands/respibudy_ls.webp',
+            '/assets/brands/respibudy_ls_product.webp'
         ]
     },
     {
@@ -404,8 +404,8 @@ export const brands = [
         storage: "Store below 30°C.",
         packSize: "100 ml",
         gallery: [
-            '/assets/brands/idrox.png',
-            '/assets/brands/idrox_product.png'
+            '/assets/brands/idrox.webp',
+            '/assets/brands/idrox_product.webp'
         ]
     },
     {
@@ -438,8 +438,8 @@ export const brands = [
         storage: "Store below 30°C in a cool and dry place.",
         packSize: "100 gm",
         gallery: [
-            '/assets/brands/dryfit.png',
-            '/assets/brands/dryfit_product.png'
+            '/assets/brands/dryfit.webp',
+            '/assets/brands/dryfit_product.webp'
         ]
     }
 ];

@@ -18,7 +18,9 @@ const BrandCard = ({ brand }) => {
                     alt={brand.name}
                     className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-500 ease-out"
                     loading="lazy"
-                    onError={(e) => { e.target.onerror = null; e.target.src = brand.gallery[0] ? brand.gallery[0].replace('.png', '.svg') : ''; }}
+                    width="200"
+                    height="128"
+                    onError={(e) => { e.target.onerror = null; e.target.src = brand.gallery[0] ? brand.gallery[0].replace('.webp', '.svg') : ''; }}
                 />
                 <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm px-2 py-0.5 rounded-full text-[10px] font-bold text-blue-600 border border-blue-50 shadow-sm">
                     {brand.category}

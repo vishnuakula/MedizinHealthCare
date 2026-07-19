@@ -80,7 +80,7 @@ const BrandDetails = () => {
                                 src={brand.gallery[0]}
                                 alt={brand.name}
                                 className="w-full max-w-[400px] h-auto object-contain drop-shadow-xl"
-                                onError={(e) => { e.target.onerror = null; e.target.src = brand.gallery[0].replace('.png', '.svg'); }}
+                                onError={(e) => { e.target.onerror = null; e.target.src = brand.gallery[0].replace('.webp', '.svg'); }}
                             />
                             <div className="absolute top-6 left-6 flex gap-2">
                                 <span className="bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold text-blue-600 shadow-sm border border-blue-50">
